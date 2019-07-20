@@ -1,0 +1,67 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1404\cocoasubrtf340
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red180\green36\blue25;}
+\margl1440\margr1440\vieww17300\viewh8020\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 scp Yang\'92s isca and P11 files from aeolis to laptop (3.6 Gb each)\
+\
+Python code:\
+\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+1. Write new python code that reads (Yang-formatted) isca and P11 files, creating internal variables (wnumlist, refflist, ppa, Qsca, Pnrm, etc.)\
+2. Access existing libraries (e.g., pmomstuff.ssp2pmom) to convert to legendre moments; pmomstuff uses fortran code, can\'92t be used on aeolis\
+3. Access existing libraries (e.g., pmomstuff.pmomsave) to save these as netcdf files\
+4. Use existing code (e.g., pmomQC.ipynb) to compare matlab-generated moments to moments from pmomstuff (this is for quality control)\
+\
+Matlab code:\
+\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+1. Write new matlab code that reads (Yang-formatted) isca and P11 files (and saves as .mat files, for QC)\
+\
+\
+Troubles \'85\
+\
+Can\'92t seem to get f2py installed properly.\
+Supposedly, f2py comes with numpy now  \
+in python, I can say\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f1\fs22 \cf0 \CocoaLigature0 import numpy.f2py as myf2py\
+\
+then\
+\
+fsource = '''\
+subroutine foo\
+print*, "hello"\
+end\
+'''\
+\
+then \
+\
+myf2py.compile(fsource,modulename='hello',verbose=0)\
+\
+But there\'92s an error\
+\
+xcrun: error: invalid active developer path (/Library/Developer/CommandLineTools), missing xcrun at: /Library/Developer/CommandLineTools/usr/bin/xcrun\
+
+\f0\fs24 \CocoaLigature1 \
+So I checked the web, and it said to install developer tools (from the linux prompt):\
+\
+
+\f1\fs22 \CocoaLigature0 Steven$ xcode-select --install\
+\
+This created hello.so\
+\
+this website was helpful: http://stackoverflow.com/questions/22622571/difference-between-import-numpy-and-import-numpy-as-np/22622968#22622968\
+\
+The above myf2py compilation doesn\'92t work in python 3.5, giving the error\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\cf2 TypeError\cf0 : a bytes-like object is required, not 'str'\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 \CocoaLigature1 \
+\
+\
+}

@@ -1,7 +1,7 @@
 # README #
 
 Generating single-scattering parameters from indices of refraction
-M Fergoda & S Neshyba
+M Fergoda & S Neshyba, 2020
 
 Have to add these folders to MATLAB’s path:
 
@@ -61,5 +61,6 @@ There's also a quality-control python code, called pmomQC.ipynb, that compares t
 
 Some useful git commands:
 git status
-git diff --stat origin/master..HEAD  (this tells you if anything is committed, but not yet pushed)
+git diff (this tells you if anything is committed, but not yet pushed)
+git diff --stat origin/master..HEAD  (more specific form)
 git reset --hard HEAD^  (this rolls back one commit and whatever was added)

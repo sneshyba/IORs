@@ -53,6 +53,13 @@ Two possibilities are available:
 
 1. (matlab) For a quick-and-dirty list of phase function moments, you can run ssp2pmom.m. But ssp2pmom.m is not stable for large moments, but it may be useful for later comparisons.
 
-2. (python) Run ssp2pmom.ipynb. The result is a netcdf file. However, ssp2pmom.ipynb invokes an octave kernel to read the ssp files, and a fortran kernel (code written by Sally McFarlane to compute phase function moments). That all takes a bit of work to install.
+2. (python) Run ssp2pmom.ipynb. The result is a netcdf file. However, ssp2pmom.ipynb invokes a fortran kernel (code written by Sally McFarlane to compute phase function moments). That all takes a bit of work to install.
 
 
+There's also a quality-control python code, called pmomQC.ipynb, that compares the quick-and-dirty matlab result with the python/fortran results.
+
+
+Some useful git commands:
+git status
+git diff --stat origin/master..HEAD  (this tells you if anything is committed, but not yet pushed)
+git reset --hard HEAD^  (this rolls back one commit and whatever was added)

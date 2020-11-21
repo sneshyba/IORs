@@ -66,5 +66,6 @@ git diff --stat origin/master..HEAD  (more specific form)
 git reset --hard HEAD^  (this rolls back one commit and whatever was added)
 
 
+November 2020, Steven remade this repo w/o lfs, and renamed it to IORs (instead of IORs2020). Somehow, there's still a large file error message during push, saying "remote: warning: File Data/CRI/hybrid_RFN_2018/hybrid_RFN_240K/iops.txt is 59.76 MB; this is larger than GitHub's recommended maximum file size of 50.00 MB" But I can't find that file.
 
-Trying to remake this repo w/o lfs
+

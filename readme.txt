@@ -64,3 +64,7 @@ git status
 git diff (this tells you if anything is committed, but not yet pushed)
 git diff --stat origin/master..HEAD  (more specific form)
 git reset --hard HEAD^  (this rolls back one commit and whatever was added)
+
+
+
+Trying to remake this repo w/o lfs
